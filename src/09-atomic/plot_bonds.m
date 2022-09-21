@@ -2,10 +2,10 @@ clear;
 clf;hold on;
 xy = load('xy.txt');
 neighbor = load('neighbor.txt');
-bonds = zeros(sum(neighbor(:,1))*3,2);
+bonds = zeros(sum(neighbor(:,1))*3,2);  
 i = 1;
 for n = 1:size(xy,1)
-    for k=1:neighbor(n,1)
+    for k=1:neighbor(n,1) # 从1到neighbor矩阵的第n行第1列
         bonds(i,:) = xy(n,:); i=i+1;
         bonds(i,:) = xy(neighbor(n,1+k)+1,:); i=i+1;
         bonds(i,:) = [NaN,NaN]; i=i+1;
